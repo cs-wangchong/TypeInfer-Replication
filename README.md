@@ -1,1 +1,1 @@
-# TypeInfer-Replication
+# TIGER - Replication Package
