@@ -1,0 +1,233 @@
+--------------- OVERALL ---------------
+total count: 10000
+top-1
+	[generating]  cnt: 8421 acc: 0.8421
+	[ ranking  ]  cnt: 1739 acc: 0.1739
+	[   ours   ]  cnt: 8611 acc: 0.8611
+top-2
+	[generating]  cnt: 8876 acc: 0.8876
+	[ ranking  ]  cnt: 1911 acc: 0.1911
+	[   ours   ]  cnt: 9126 acc: 0.9126
+top-3
+	[generating]  cnt: 9044 acc: 0.9044
+	[ ranking  ]  cnt: 2002 acc: 0.2002
+	[   ours   ]  cnt: 9279 acc: 0.9279
+top-4
+	[generating]  cnt: 9131 acc: 0.9131
+	[ ranking  ]  cnt: 2075 acc: 0.2075
+	[   ours   ]  cnt: 9361 acc: 0.9361
+top-5
+	[generating]  cnt: 9192 acc: 0.9192
+	[ ranking  ]  cnt: 2122 acc: 0.2122
+	[   ours   ]  cnt: 9406 acc: 0.9406
+
+
+
+
+--------------- VAR ---------------
+total count: 7091
+top-1
+	[generating]  cnt: 6371 acc: 0.8984628402199972
+	[ ranking  ]  cnt: 1097 acc: 0.1547031448314765
+	[   ours   ]  cnt: 6425 acc: 0.9060781272034973
+top-2
+	[generating]  cnt: 6610 acc: 0.932167536313637
+	[ ranking  ]  cnt: 1181 acc: 0.16654914680581018
+	[   ours   ]  cnt: 6697 acc: 0.944436609787054
+top-3
+	[generating]  cnt: 6689 acc: 0.9433084191228318
+	[ ranking  ]  cnt: 1213 acc: 0.1710619094626992
+	[   ours   ]  cnt: 6760 acc: 0.9533211112678043
+top-4
+	[generating]  cnt: 6729 acc: 0.9489493724439431
+	[ ranking  ]  cnt: 1255 acc: 0.17698491044986603
+	[   ours   ]  cnt: 6792 acc: 0.9578338739246933
+top-5
+	[generating]  cnt: 6758 acc: 0.9530390636017487
+	[ ranking  ]  cnt: 1274 acc: 0.17966436327739388
+	[   ours   ]  cnt: 6810 acc: 0.9603723029191934
+
+
+
+
+--------------- ARG ---------------
+total count: 1995
+top-1
+	[generating]  cnt: 1353 acc: 0.6781954887218045
+	[ ranking  ]  cnt: 487 acc: 0.24411027568922306
+	[   ours   ]  cnt: 1475 acc: 0.7393483709273183
+top-2
+	[generating]  cnt: 1517 acc: 0.7604010025062656
+	[ ranking  ]  cnt: 552 acc: 0.27669172932330827
+	[   ours   ]  cnt: 1662 acc: 0.8330827067669173
+top-3
+	[generating]  cnt: 1584 acc: 0.793984962406015
+	[ ranking  ]  cnt: 591 acc: 0.2962406015037594
+	[   ours   ]  cnt: 1726 acc: 0.8651629072681705
+top-4
+	[generating]  cnt: 1624 acc: 0.8140350877192982
+	[ ranking  ]  cnt: 613 acc: 0.3072681704260652
+	[   ours   ]  cnt: 1764 acc: 0.8842105263157894
+top-5
+	[generating]  cnt: 1650 acc: 0.8270676691729323
+	[ ranking  ]  cnt: 634 acc: 0.31779448621553885
+	[   ours   ]  cnt: 1784 acc: 0.894235588972431
+
+
+
+
+--------------- RET ---------------
+total count: 914
+top-1
+	[generating]  cnt: 697 acc: 0.762582056892779
+	[ ranking  ]  cnt: 155 acc: 0.16958424507658643
+	[   ours   ]  cnt: 711 acc: 0.7778993435448578
+top-2
+	[generating]  cnt: 749 acc: 0.8194748358862144
+	[ ranking  ]  cnt: 178 acc: 0.19474835886214442
+	[   ours   ]  cnt: 767 acc: 0.8391684901531729
+top-3
+	[generating]  cnt: 771 acc: 0.8435448577680525
+	[ ranking  ]  cnt: 198 acc: 0.21663019693654267
+	[   ours   ]  cnt: 793 acc: 0.8676148796498906
+top-4
+	[generating]  cnt: 778 acc: 0.8512035010940919
+	[ ranking  ]  cnt: 207 acc: 0.22647702407002188
+	[   ours   ]  cnt: 805 acc: 0.8807439824945296
+top-5
+	[generating]  cnt: 784 acc: 0.8577680525164114
+	[ ranking  ]  cnt: 214 acc: 0.23413566739606126
+	[   ours   ]  cnt: 812 acc: 0.888402625820569
+
+
+
+
+--------------- ELE ---------------
+total count: 5199
+top-1
+	[generating]  cnt: 4887 acc: 0.9399884593190998
+	[ ranking  ]  cnt: 9 acc: 0.0017311021350259665
+	[   ours   ]  cnt: 4915 acc: 0.9453741104058473
+top-2
+	[generating]  cnt: 5006 acc: 0.9628774764377765
+	[ ranking  ]  cnt: 14 acc: 0.0026928255433737256
+	[   ours   ]  cnt: 5053 acc: 0.9719176764762454
+top-3
+	[generating]  cnt: 5045 acc: 0.970378919022889
+	[ ranking  ]  cnt: 18 acc: 0.003462204270051933
+	[   ours   ]  cnt: 5073 acc: 0.9757645701096365
+top-4
+	[generating]  cnt: 5062 acc: 0.9736487786112714
+	[ ranking  ]  cnt: 33 acc: 0.006347374495095211
+	[   ours   ]  cnt: 5077 acc: 0.9765339488363147
+top-5
+	[generating]  cnt: 5077 acc: 0.9765339488363147
+	[ ranking  ]  cnt: 38 acc: 0.007309097903442969
+	[   ours   ]  cnt: 5078 acc: 0.9767262935179842
+
+
+
+
+--------------- GEN ---------------
+total count: 2748
+top-1
+	[generating]  cnt: 2031 acc: 0.7390829694323144
+	[ ranking  ]  cnt: 36 acc: 0.013100436681222707
+	[   ours   ]  cnt: 2064 acc: 0.7510917030567685
+top-2
+	[generating]  cnt: 2290 acc: 0.8333333333333334
+	[ ranking  ]  cnt: 64 acc: 0.023289665211062592
+	[   ours   ]  cnt: 2329 acc: 0.8475254730713246
+top-3
+	[generating]  cnt: 2382 acc: 0.8668122270742358
+	[ ranking  ]  cnt: 95 acc: 0.034570596797671035
+	[   ours   ]  cnt: 2405 acc: 0.8751819505094615
+top-4
+	[generating]  cnt: 2428 acc: 0.883551673944687
+	[ ranking  ]  cnt: 125 acc: 0.04548762736535662
+	[   ours   ]  cnt: 2442 acc: 0.888646288209607
+top-5
+	[generating]  cnt: 2457 acc: 0.8941048034934498
+	[ ranking  ]  cnt: 146 acc: 0.05312954876273653
+	[   ours   ]  cnt: 2457 acc: 0.8941048034934498
+
+
+
+
+--------------- USR ---------------
+total count: 2053
+top-1
+	[generating]  cnt: 1503 acc: 0.7320993667803215
+	[ ranking  ]  cnt: 1694 acc: 0.8251339503166099
+	[   ours   ]  cnt: 1632 acc: 0.7949342425718461
+top-2
+	[generating]  cnt: 1580 acc: 0.7696054554310765
+	[ ranking  ]  cnt: 1833 acc: 0.8928397467121286
+	[   ours   ]  cnt: 1744 acc: 0.8494885533365806
+top-3
+	[generating]  cnt: 1617 acc: 0.7876278616658549
+	[ ranking  ]  cnt: 1889 acc: 0.9201169020944958
+	[   ours   ]  cnt: 1801 acc: 0.8772528007793473
+top-4
+	[generating]  cnt: 1641 acc: 0.7993180711154408
+	[ ranking  ]  cnt: 1917 acc: 0.9337554797856795
+	[   ours   ]  cnt: 1842 acc: 0.8972235752557234
+top-5
+	[generating]  cnt: 1658 acc: 0.8075986361422309
+	[ ranking  ]  cnt: 1938 acc: 0.9439844130540672
+	[   ours   ]  cnt: 1871 acc: 0.9113492450073064
+
+
+
+
+--------------- SEEN ---------------
+total count: 9421
+top-1
+	[generating]  cnt: 8066 acc: 0.8561723808512897
+	[ ranking  ]  cnt: 1318 acc: 0.13990022290627321
+	[   ours   ]  cnt: 8228 acc: 0.8733680076425008
+top-2
+	[generating]  cnt: 8497 acc: 0.9019212397834625
+	[ ranking  ]  cnt: 1450 acc: 0.15391147436577857
+	[   ours   ]  cnt: 8712 acc: 0.9247425963273538
+top-3
+	[generating]  cnt: 8660 acc: 0.9192230124190638
+	[ ranking  ]  cnt: 1521 acc: 0.16144782931748222
+	[   ours   ]  cnt: 8850 acc: 0.9393907228532002
+top-4
+	[generating]  cnt: 8742 acc: 0.9279269716590596
+	[ ranking  ]  cnt: 1584 acc: 0.16813501751406432
+	[   ours   ]  cnt: 8918 acc: 0.9466086402717334
+top-5
+	[generating]  cnt: 8800 acc: 0.9340834306336907
+	[ ranking  ]  cnt: 1621 acc: 0.17206241375650144
+	[   ours   ]  cnt: 8949 acc: 0.9498991614478293
+
+
+
+
+--------------- UNSEEN ---------------
+total count: 579
+top-1
+	[generating]  cnt: 355 acc: 0.613126079447323
+	[ ranking  ]  cnt: 421 acc: 0.7271157167530224
+	[   ours   ]  cnt: 383 acc: 0.6614853195164075
+top-2
+	[generating]  cnt: 379 acc: 0.6545768566493955
+	[ ranking  ]  cnt: 461 acc: 0.7962003454231433
+	[   ours   ]  cnt: 414 acc: 0.7150259067357513
+top-3
+	[generating]  cnt: 384 acc: 0.6632124352331606
+	[ ranking  ]  cnt: 481 acc: 0.8307426597582038
+	[   ours   ]  cnt: 429 acc: 0.7409326424870466
+top-4
+	[generating]  cnt: 389 acc: 0.6718480138169257
+	[ ranking  ]  cnt: 491 acc: 0.8480138169257341
+	[   ours   ]  cnt: 443 acc: 0.7651122625215889
+top-5
+	[generating]  cnt: 392 acc: 0.6770293609671848
+	[ ranking  ]  cnt: 501 acc: 0.8652849740932642
+	[   ours   ]  cnt: 457 acc: 0.7892918825561313
+
+
+
