@@ -5,7 +5,7 @@ from hityper.typeobject import TypeObject
 
 
 EXACT = True
-# EXACT = False
+EXACT = False
 
 if __name__ == "__main__":
     OUTPUT_DIR = "output"
@@ -181,10 +181,10 @@ if __name__ == "__main__":
             metrics_infos.append(f'--------------- {kind.upper()} ---------------')
             metrics_infos.append(f"total count: {total_count}")
             for k in K:
-                metrics_infos.append(f"top-{k}")
-                metrics_infos.append(f"\t[generating]  cnt: {gen_topn_dict[kind][k]} acc: {gen_topn_dict[kind][k]/total_count if total_count else 0}")
-                metrics_infos.append(f"\t[ ranking  ]  cnt: {rank_topn_dict[kind][k]} acc: {rank_topn_dict[kind][k]/total_count if total_count else 0}")
-                metrics_infos.append(f"\t[   ours   ]  cnt: {ours_topn_dict[kind][k]} acc: {ours_topn_dict[kind][k]/total_count if total_count else 0}")
+                metrics_infos.append(f"##### TOP-{k} #####")
+                metrics_infos.append(f"\t[only generating] acc: {gen_topn_dict[kind][k]/total_count if total_count else 0}")
+                metrics_infos.append(f"\t[ only  ranking ] acc: {rank_topn_dict[kind][k]/total_count if total_count else 0}")
+                metrics_infos.append(f"\t[     TIGER     ] acc: {ours_topn_dict[kind][k]/total_count if total_count else 0}")
             metrics_infos.append("\n\n\n")
         
         open(metrics_path, "w").write("\n".join(metrics_infos))
