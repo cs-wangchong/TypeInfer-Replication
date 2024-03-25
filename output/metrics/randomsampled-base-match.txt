@@ -1,161 +1,161 @@
 --------------- OVERALL ---------------
 total count: 10000
-top-1
-	[generating]  cnt: 9048 acc: 0.9048
-	[ ranking  ]  cnt: 1850 acc: 0.185
-	[   ours   ]  cnt: 9233 acc: 0.9233
-top-3
-	[generating]  cnt: 9365 acc: 0.9365
-	[ ranking  ]  cnt: 2225 acc: 0.2225
-	[   ours   ]  cnt: 9619 acc: 0.9619
-top-5
-	[generating]  cnt: 9455 acc: 0.9455
-	[ ranking  ]  cnt: 2443 acc: 0.2443
-	[   ours   ]  cnt: 9738 acc: 0.9738
+##### TOP-1 #####
+	[only generating] acc: 0.9048
+	[ only  ranking ] acc: 0.185
+	[     TIGER     ] acc: 0.9233
+##### TOP-3 #####
+	[only generating] acc: 0.9365
+	[ only  ranking ] acc: 0.2225
+	[     TIGER     ] acc: 0.9619
+##### TOP-5 #####
+	[only generating] acc: 0.9455
+	[ only  ranking ] acc: 0.2443
+	[     TIGER     ] acc: 0.9738
 
 
 
 
 --------------- VAR ---------------
 total count: 7091
-top-1
-	[generating]  cnt: 6786 acc: 0.9569877309265266
-	[ ranking  ]  cnt: 1133 acc: 0.15978000282047666
-	[   ours   ]  cnt: 6820 acc: 0.9617825412494712
-top-3
-	[generating]  cnt: 6894 acc: 0.972218304893527
-	[ ranking  ]  cnt: 1307 acc: 0.18431814976731067
-	[   ours   ]  cnt: 6958 acc: 0.981243830207305
-top-5
-	[generating]  cnt: 6930 acc: 0.9772951628825272
-	[ ranking  ]  cnt: 1413 acc: 0.19926667606825554
-	[   ours   ]  cnt: 6992 acc: 0.9860386405302496
+##### TOP-1 #####
+	[only generating] acc: 0.9569877309265266
+	[ only  ranking ] acc: 0.15978000282047666
+	[     TIGER     ] acc: 0.9617825412494712
+##### TOP-3 #####
+	[only generating] acc: 0.972218304893527
+	[ only  ranking ] acc: 0.18431814976731067
+	[     TIGER     ] acc: 0.981243830207305
+##### TOP-5 #####
+	[only generating] acc: 0.9772951628825272
+	[ only  ranking ] acc: 0.19926667606825554
+	[     TIGER     ] acc: 0.9860386405302496
 
 
 
 
 --------------- ARG ---------------
 total count: 1995
-top-1
-	[generating]  cnt: 1482 acc: 0.7428571428571429
-	[ ranking  ]  cnt: 529 acc: 0.26516290726817043
-	[   ours   ]  cnt: 1617 acc: 0.8105263157894737
-top-3
-	[generating]  cnt: 1654 acc: 0.8290726817042606
-	[ ranking  ]  cnt: 654 acc: 0.32781954887218046
-	[   ours   ]  cnt: 1818 acc: 0.9112781954887218
-top-5
-	[generating]  cnt: 1700 acc: 0.8521303258145363
-	[ ranking  ]  cnt: 727 acc: 0.3644110275689223
-	[   ours   ]  cnt: 1886 acc: 0.9453634085213033
+##### TOP-1 #####
+	[only generating] acc: 0.7428571428571429
+	[ only  ranking ] acc: 0.26516290726817043
+	[     TIGER     ] acc: 0.8105263157894737
+##### TOP-3 #####
+	[only generating] acc: 0.8290726817042606
+	[ only  ranking ] acc: 0.32781954887218046
+	[     TIGER     ] acc: 0.9112781954887218
+##### TOP-5 #####
+	[only generating] acc: 0.8521303258145363
+	[ only  ranking ] acc: 0.3644110275689223
+	[     TIGER     ] acc: 0.9453634085213033
 
 
 
 
 --------------- RET ---------------
 total count: 914
-top-1
-	[generating]  cnt: 780 acc: 0.8533916849015317
-	[ ranking  ]  cnt: 188 acc: 0.20568927789934355
-	[   ours   ]  cnt: 796 acc: 0.8708971553610503
-top-3
-	[generating]  cnt: 817 acc: 0.8938730853391685
-	[ ranking  ]  cnt: 264 acc: 0.2888402625820569
-	[   ours   ]  cnt: 843 acc: 0.9223194748358862
-top-5
-	[generating]  cnt: 825 acc: 0.9026258205689278
-	[ ranking  ]  cnt: 303 acc: 0.33150984682713347
-	[   ours   ]  cnt: 860 acc: 0.9409190371991247
+##### TOP-1 #####
+	[only generating] acc: 0.8533916849015317
+	[ only  ranking ] acc: 0.20568927789934355
+	[     TIGER     ] acc: 0.8708971553610503
+##### TOP-3 #####
+	[only generating] acc: 0.8938730853391685
+	[ only  ranking ] acc: 0.2888402625820569
+	[     TIGER     ] acc: 0.9223194748358862
+##### TOP-5 #####
+	[only generating] acc: 0.9026258205689278
+	[ only  ranking ] acc: 0.33150984682713347
+	[     TIGER     ] acc: 0.9409190371991247
 
 
 
 
 --------------- ELE ---------------
 total count: 5199
-top-1
-	[generating]  cnt: 4967 acc: 0.955376033852664
-	[ ranking  ]  cnt: 16 acc: 0.0030775149067128293
-	[   ours   ]  cnt: 5002 acc: 0.9621080977110983
-top-3
-	[generating]  cnt: 5071 acc: 0.9753798807462973
-	[ ranking  ]  cnt: 38 acc: 0.007309097903442969
-	[   ours   ]  cnt: 5089 acc: 0.9788420850163493
-top-5
-	[generating]  cnt: 5094 acc: 0.979803808424697
-	[ ranking  ]  cnt: 63 acc: 0.012117714945181766
-	[   ours   ]  cnt: 5093 acc: 0.9796114637430275
+##### TOP-1 #####
+	[only generating] acc: 0.955376033852664
+	[ only  ranking ] acc: 0.0030775149067128293
+	[     TIGER     ] acc: 0.9621080977110983
+##### TOP-3 #####
+	[only generating] acc: 0.9753798807462973
+	[ only  ranking ] acc: 0.007309097903442969
+	[     TIGER     ] acc: 0.9788420850163493
+##### TOP-5 #####
+	[only generating] acc: 0.979803808424697
+	[ only  ranking ] acc: 0.012117714945181766
+	[     TIGER     ] acc: 0.9796114637430275
 
 
 
 
 --------------- GEN ---------------
 total count: 2748
-top-1
-	[generating]  cnt: 2565 acc: 0.9334061135371179
-	[ ranking  ]  cnt: 100 acc: 0.036390101892285295
-	[   ours   ]  cnt: 2562 acc: 0.9323144104803494
-top-3
-	[generating]  cnt: 2664 acc: 0.9694323144104804
-	[ ranking  ]  cnt: 245 acc: 0.08915574963609899
-	[   ours   ]  cnt: 2660 acc: 0.9679767103347889
-top-5
-	[generating]  cnt: 2688 acc: 0.9781659388646288
-	[ ranking  ]  cnt: 385 acc: 0.1401018922852984
-	[   ours   ]  cnt: 2689 acc: 0.9785298398835517
+##### TOP-1 #####
+	[only generating] acc: 0.9334061135371179
+	[ only  ranking ] acc: 0.036390101892285295
+	[     TIGER     ] acc: 0.9323144104803494
+##### TOP-3 #####
+	[only generating] acc: 0.9694323144104804
+	[ only  ranking ] acc: 0.08915574963609899
+	[     TIGER     ] acc: 0.9679767103347889
+##### TOP-5 #####
+	[only generating] acc: 0.9781659388646288
+	[ only  ranking ] acc: 0.1401018922852984
+	[     TIGER     ] acc: 0.9785298398835517
 
 
 
 
 --------------- USR ---------------
 total count: 2053
-top-1
-	[generating]  cnt: 1516 acc: 0.7384315635655139
-	[ ranking  ]  cnt: 1734 acc: 0.8446176327325865
-	[   ours   ]  cnt: 1669 acc: 0.8129566488066244
-top-3
-	[generating]  cnt: 1630 acc: 0.7939600584510472
-	[ ranking  ]  cnt: 1942 acc: 0.9459327812956648
-	[   ours   ]  cnt: 1870 acc: 0.910862152946907
-top-5
-	[generating]  cnt: 1673 acc: 0.8149050170482222
-	[ ranking  ]  cnt: 1995 acc: 0.971748660496834
-	[   ours   ]  cnt: 1956 acc: 0.9527520701412567
+##### TOP-1 #####
+	[only generating] acc: 0.7384315635655139
+	[ only  ranking ] acc: 0.8446176327325865
+	[     TIGER     ] acc: 0.8129566488066244
+##### TOP-3 #####
+	[only generating] acc: 0.7939600584510472
+	[ only  ranking ] acc: 0.9459327812956648
+	[     TIGER     ] acc: 0.910862152946907
+##### TOP-5 #####
+	[only generating] acc: 0.8149050170482222
+	[ only  ranking ] acc: 0.971748660496834
+	[     TIGER     ] acc: 0.9527520701412567
 
 
 
 
 --------------- SEEN ---------------
 total count: 9421
-top-1
-	[generating]  cnt: 8683 acc: 0.9216643668400382
-	[ ranking  ]  cnt: 1398 acc: 0.1483918904574886
-	[   ours   ]  cnt: 8825 acc: 0.9367370767434455
-top-3
-	[generating]  cnt: 8972 acc: 0.9523405158688037
-	[ ranking  ]  cnt: 1706 acc: 0.18108481052966777
-	[   ours   ]  cnt: 9142 acc: 0.9703853094151363
-top-5
-	[generating]  cnt: 9052 acc: 0.9608321834200191
-	[ ranking  ]  cnt: 1901 acc: 0.20178325018575521
-	[   ours   ]  cnt: 9226 acc: 0.9793015603439126
+##### TOP-1 #####
+	[only generating] acc: 0.9216643668400382
+	[ only  ranking ] acc: 0.1483918904574886
+	[     TIGER     ] acc: 0.9367370767434455
+##### TOP-3 #####
+	[only generating] acc: 0.9523405158688037
+	[ only  ranking ] acc: 0.18108481052966777
+	[     TIGER     ] acc: 0.9703853094151363
+##### TOP-5 #####
+	[only generating] acc: 0.9608321834200191
+	[ only  ranking ] acc: 0.20178325018575521
+	[     TIGER     ] acc: 0.9793015603439126
 
 
 
 
 --------------- UNSEEN ---------------
 total count: 579
-top-1
-	[generating]  cnt: 365 acc: 0.6303972366148531
-	[ ranking  ]  cnt: 452 acc: 0.7806563039723662
-	[   ours   ]  cnt: 408 acc: 0.7046632124352331
-top-3
-	[generating]  cnt: 393 acc: 0.6787564766839378
-	[ ranking  ]  cnt: 519 acc: 0.8963730569948186
-	[   ours   ]  cnt: 477 acc: 0.8238341968911918
-top-5
-	[generating]  cnt: 403 acc: 0.696027633851468
-	[ ranking  ]  cnt: 542 acc: 0.9360967184801382
-	[   ours   ]  cnt: 512 acc: 0.8842832469775475
+##### TOP-1 #####
+	[only generating] acc: 0.6303972366148531
+	[ only  ranking ] acc: 0.7806563039723662
+	[     TIGER     ] acc: 0.7046632124352331
+##### TOP-3 #####
+	[only generating] acc: 0.6787564766839378
+	[ only  ranking ] acc: 0.8963730569948186
+	[     TIGER     ] acc: 0.8238341968911918
+##### TOP-5 #####
+	[only generating] acc: 0.696027633851468
+	[ only  ranking ] acc: 0.9360967184801382
+	[     TIGER     ] acc: 0.8842832469775475
 
 
 
