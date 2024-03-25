@@ -2,19 +2,27 @@ import json
 from pathlib import Path
 import matplotlib.pyplot as plt
 import numpy as np
+import typing
 
 from hityper.typeobject import TypeObject
 
+
+BUILTINS = set(typing.__all__)
+BUILTINS.update(t.lower() for t in BUILTINS.copy())
+# The following builtins are from ManyTypes4Py
+BUILTINS.update({'IO', 'Literal', 'Warning', 'DefaultDict', 'ChainMap', 'bytearray', 'Pattern', 'Optional', 'Exception', 'str', 'tuple', 'Deque', 'Collection', 'Iterable', 'bool', 'Match', 'complex', 'dict', 'Any', 'Type', 'list', 'Counter', 'frozenset', 'None', 'Reversible', 'Iterator', 'Union', 'set', 'int', 'bytes', 'Generator', 'Callable', 'memoryview', 'float'})
+
+
 EXACT = True
-# EXACT = False
+EXACT = False
 
 if __name__ == "__main__":
-    DATA_DIR = "data"
-    OUTPUT_DIR = "output/"
+    # OUTPUT_DIR = "output/biencoder-msk"
+    OUTPUT_DIR = "output/singleton-avg (used in paper)"
 
+    DATA_DIR = "data/ManyTypes4Py-JSON"
     TESTSET_VERSION = "randomsampled"
     # TESTSET_VERSION = "Overall"
-
 
     Path(f"{OUTPUT_DIR}/metrics").mkdir(parents=True, exist_ok=True)
     Path(f"{OUTPUT_DIR}/logs").mkdir(parents=True, exist_ok=True)
@@ -91,9 +99,11 @@ if __name__ == "__main__":
         for id, (name, gt_type, src_kind) in transformed_dict.items():
             if id not in prediction_dict:
                 continue
+
             masked_code, user_types = masked_code_dict[id], user_types_dict[id][1]
             gt_type_obj = TypeObject.Str2Obj(gt_type)
-            orig_preds, final_preds = prediction_dict[id]["original"], prediction_dict[id]["ranking"]
+            generating_preds, ranking_preds, all_cands, likelihoods, similarities =\
+                prediction_dict[id]["generating"], prediction_dict[id]["ranking"], prediction_dict[id]["candidates"], prediction_dict[id]["likelihoods"], prediction_dict[id]["similarities"]
 
             if src_kind.startswith("depth"):
                 src_kind = "Gen"
@@ -128,15 +138,27 @@ if __name__ == "__main__":
 
             _logs.append('----- ONLY GENERATING -----')
             ranking = 999999
-            for idx, (pred, score) in enumerate(orig_preds, 1):
+            for idx, (pred, score) in enumerate(generating_preds, 1):
 #             for idx, pred in enumerate(orig_preds, 1):
 #                 score = 0
+              
+                # base = pred.split("[")[0].split(".")[-1]
+                # if base not in BUILTINS and base not in user_types:
+                #     continue
                 _logs.append(f"** idx: {idx}, pred type: {pred}, score: {score}")
                 pred_type_obj = TypeObject.Str2Obj(pred)
                 if (EXACT and TypeObject.isIdenticalSet(gt_type_obj, pred_type_obj)) or (not EXACT and TypeObject.isSetIncluded2(gt_type_obj, pred_type_obj)):
                     if idx < ranking:
                         ranking = idx
                         _logs.append(f"** hit!!!!")
+            
+            # if ranking != 999999 or src_kind != "Usr":
+            #     count_dict["Overall"] -= 1
+            #     count_dict[src_kind] -= 1
+            #     count_dict[pos_kind] -= 1
+            #     count_dict[seen_kind] -= 1
+            #     continue
+
             for k in K:
                 if ranking <= k:
                     gen_topn_dict["Overall"][k] += 1
@@ -146,15 +168,11 @@ if __name__ == "__main__":
 
             _logs.append('----- ONLY RANKING -----')
             user_types = set(user_types)
-            # lik_norm = sum(lik for _, _, lik, _ in rank_preds)
-            lik_norm = 1.
-            rank_preds = [(pred, sim / 2 + 0.5, lik / lik_norm) for pred, sim, lik, _ in final_preds]
-            rank_preds = [(pred, sim, lik, alpha * lik + (1- alpha) * sim) for pred, sim, lik in rank_preds]
-            rank_preds = [(pred, sim, lik, score) for pred, sim, lik, score in rank_preds if pred in user_types]
+            rank_preds = [(pred, sim) for pred, sim in zip(all_cands, similarities) if pred in user_types]
             rank_preds.sort(key=lambda pred: pred[-1], reverse=True)
             ranking = 999999
-            for idx, (pred, sim, lik, score) in enumerate(rank_preds, 1):
-                _logs.append(f"** idx: {idx}, pred type: {pred}, similarity: {sim}, likelihood: {lik}, score: {score}")
+            for idx, (pred, sim) in enumerate(rank_preds, 1):
+                _logs.append(f"** idx: {idx}, pred type: {pred}, similarity: {sim}")
                 pred_type_obj = TypeObject.Str2Obj(pred)
                 if (EXACT and TypeObject.isIdenticalSet(gt_type_obj, pred_type_obj)) or (not EXACT and TypeObject.isSetIncluded2(gt_type_obj, pred_type_obj)):
                     if idx < ranking:
@@ -166,12 +184,20 @@ if __name__ == "__main__":
                     rank_topn_dict[src_kind][k] += 1
                     rank_topn_dict[pos_kind][k] += 1
                     rank_topn_dict[seen_kind][k] += 1
-            log_infos.append("\n".join(_logs))
+            # log_infos.append("\n".join(_logs))
             
             _logs.append('----- OURS -----')
+            valid_set = set()
+            for gen, _ in generating_preds:
+                # base = gen.split("[")[0].split(".")[-1]
+                # if base not in BUILTINS and base not in user_types:
+                #     continue
+                valid_set.add(gen)
+            valid_set.update(user_types)
+            _logs.append(f"valid cands: {valid_set}")
             # lik_norm = sum(lik for _, _, lik, _ in final_preds)
             lik_norm = 1.
-            final_preds = [(pred, sim / 2 + 0.5, lik / lik_norm) for pred, sim, lik, _ in final_preds]
+            final_preds = [(pred, sim / 2 + 0.5, lik / lik_norm) for pred, lik, sim in zip(all_cands, likelihoods, similarities) if pred in valid_set]
             final_preds = [(pred, sim, lik, alpha * lik + (1- alpha) * sim) for pred, sim, lik in final_preds]
             final_preds.sort(key=lambda pred: pred[-1], reverse=True)
             ranking = 999999
@@ -201,7 +227,8 @@ if __name__ == "__main__":
                 metrics_infos.append(f"\t[   ours   ]  cnt: {ours_topn_dict[kind][k]} acc: {ours_topn_dict[kind][k]/total_count if total_count else 0}")
             metrics_infos.append("\n\n\n")
 
-            POINTS[kind].append(ours_topn_dict[kind][5]/total_count * 100)
+            if kind in {'Overall', 'Ele', 'Gen', 'Usr', 'Unseen'}:
+                POINTS[kind].append(ours_topn_dict[kind][1]/total_count * 100 if total_count else 0)
         open(metrics_path, "w").write("\n".join(metrics_infos))
 
         open(log_path, "w").write("\n\n\n".join(log_infos))
@@ -210,7 +237,7 @@ if __name__ == "__main__":
     prediction_dict = json.load(open(f"{OUTPUT_DIR}/predictions/{TESTSET_VERSION}.json", "r"))
     transformed_dict = json.load(open(f"{DATA_DIR}/testset_{TESTSET_VERSION}_transformed.json", "r"))
     
-    exact = "" if EXACT else "-basematch"
+    exact = "-exact-match" if EXACT else "-base-match"
 
     for alpha in ALPHA:
         statistic(
@@ -223,6 +250,8 @@ if __name__ == "__main__":
 
     fig, ax = plt.subplots(1, 1)
     for kind, ys in POINTS.items():
+        if len(ys) == 0:
+            continue
         ax.plot(ALPHA, ys, label=kind)
     leg = ax.legend(loc="lower left", bbox_to_anchor=[0, 0.01],
                  ncols=3, shadow=False, title="Legend", fancybox=True)

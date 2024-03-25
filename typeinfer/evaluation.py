@@ -1,24 +1,28 @@
 import os
 import json
 from pathlib import Path
+import time
 
-from typeinfer.model import Model
+from typeinfer.model import GenerationModel, SimilarityModel, BiEncoderSimilarityModel, InferenceModel
+
 
 if __name__ == "__main__":
-    DATA_DIR = "data"
-    GENERATOR_PATH = "models/generator-XXX.ckpt"
-    RANKER_PATH = "models/ranker-XXX.ckpt"
-    OUTPUT_DIR = "output"
-    
-    model = Model(
-        generator_model_name="Salesforce/codet5-base",
-        ranker_model_name="Salesforce/codet5-base",
-        generator_ckpt=GENERATOR_PATH,
-        ranker_ckpt=RANKER_PATH,
-        device="cuda"
-    )
+    GENERATION_CKPT_PATH = "models/generation-model/model-best.ckpt"
 
-    masked_codes_dict = json.load(open(f"{DATA_DIR}/testset_masked_source_codet5.json", "r"))
+    # SIMILARITY_TYPE = "biencoder"
+    SIMILARITY_TYPE = "singleton"
+
+    EMBBEDING_MODE = "avg"
+    # EMBBEDING_MODE = "msk"
+
+
+    SIMILARITY_CKPT_PATH = f"models/similarity-model/{SIMILARITY_TYPE}-{EMBBEDING_MODE}/model-best.ckpt"
+    OUTPUT_DIR = f"output/{SIMILARITY_TYPE}-{EMBBEDING_MODE}"
+
+    DATA_DIR = "data/ManyTypes4Py-JSON"
+    # GENERATING_RESULTS_PATH = "output/codet5-finetued/predictions/randomsampled-top5.json"
+
+    masked_codes_dict = json.load(open(f"{DATA_DIR}/testset_masked_source_codet5_truncated.json", "r"))
     user_types_dict = json.load(open(f"{DATA_DIR}/testset_usertypes.json", "r"))
     answers_dict = json.load(open(f"{DATA_DIR}/testset_transformed.json", "r"))
     sampled = json.load(open(f"{DATA_DIR}/testset_randomsampled_transformed.json", "r"))
@@ -27,23 +31,53 @@ if __name__ == "__main__":
     pairs = list(masked_codes_dict.items())
     pairs = list((id, code) for id, code in pairs)
     pairs = [(id, code) for id, code in pairs if id in sampled_ids]
+
     pairs.sort(key=lambda item:len(item[1]), reverse=True)
     ids, masked_codes = zip(*pairs)
     user_types_list = [user_types_dict[id][1] for id in ids]
     gt_types = [answers_dict[id][1] for id in ids]
-    
+
+    # generating_dict = json.load(open(GENERATING_RESULTS_PATH))
+    # generating_list = [generating_dict[id] for id in ids]
+
     print(f"total size: {len(ids)}")
+
+    SimCLS = SimilarityModel if SIMILARITY_TYPE == 'singleton' else BiEncoderSimilarityModel
+    infer_model = InferenceModel(
+        GenerationModel(
+            model_name="Salesforce/codet5-base",
+            ckpt_path=GENERATION_CKPT_PATH,
+            device="cuda"
+        ),
+        SimCLS(
+            model_name="Salesforce/codet5-base",
+            ckpt_path=SIMILARITY_CKPT_PATH,
+            embedding_mode=EMBBEDING_MODE,
+            device="cuda"
+        )
+    )
     
-    original_predictions, ranking_predictions = model.predict(
+    start = time.time()
+    generating_list, ranking_list, cands_list, likelihoods_list, similarities_list = infer_model.infer(
         masked_codes,
         user_types_list,
+        # generating_list,
         alpha=0.5,
         gen_k=5,
         gen_max_len=30,
-        tem=1.0,
-        gen_batch_size=8,
-        rank_batch_size=48
+        gen_batch_size=1,
+        rank_batch_size=16
     )
-    predictions = {id: {"original": orig_preds, "ranking": rank_preds} for id, orig_preds, rank_preds in zip(ids, original_predictions, ranking_predictions)}
+    print(f"average inference time: {(time.time() - start) / len(ids)}")
+    predictions = {
+        id: {
+            "generating": gens,
+            "ranking": ranks,
+            "candidates": cands,
+            "likelihoods": likes,
+            "similarities": sims
+        } 
+        for id, gens, ranks, cands, likes, sims in zip(ids, generating_list, ranking_list, cands_list, likelihoods_list, similarities_list)
+    }
     Path(f"{OUTPUT_DIR}/predictions").mkdir(parents=True, exist_ok=True)
     json.dump(predictions, open(f"{OUTPUT_DIR}/predictions/randomsampled.json", "w"), indent=4)
