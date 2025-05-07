@@ -10,7 +10,7 @@ if __name__ == "__main__":
     SIMILARITY_CKPT_PATH = f"models/similarity-model/model-best.ckpt"
     
     DATA_DIR = "data/ManyTypes4Py-JSON"
-    OUTPUT_DIR = f"output-test"
+    OUTPUT_DIR = f"output"
 
     masked_codes_dict = json.load(open(f"{DATA_DIR}/testset_masked_source_codet5_truncated.json", "r"))
     user_types_dict = json.load(open(f"{DATA_DIR}/testset_usertypes.json", "r"))

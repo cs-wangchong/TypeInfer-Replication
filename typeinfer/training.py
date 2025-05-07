@@ -10,8 +10,8 @@ if __name__ == "__main__":
     RANKING_BALANCE = False
     
     DATA_DIR = "data/ManyTypes4Py-JSON"
-    GENERATION_DIR = "models-test/generation-model"
-    SIMILARITY_DIR = f"models-test/similarity-model"
+    GENERATION_DIR = "models/generation-model"
+    SIMILARITY_DIR = f"models/similarity-model"
 
     Path(GENERATION_DIR).mkdir(parents=True, exist_ok=True)
     Path(SIMILARITY_DIR).mkdir(parents=True, exist_ok=True)
