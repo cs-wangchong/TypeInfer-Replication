@@ -1,0 +1,161 @@
+--------------- OVERALL ---------------
+total count: 10000
+##### TOP-1 #####
+	[only generating] acc: 0.9048
+	[ only  ranking ] acc: 0.185
+	[     TIGER     ] acc: 0.9233
+##### TOP-3 #####
+	[only generating] acc: 0.9365
+	[ only  ranking ] acc: 0.2225
+	[     TIGER     ] acc: 0.9619
+##### TOP-5 #####
+	[only generating] acc: 0.9455
+	[ only  ranking ] acc: 0.2443
+	[     TIGER     ] acc: 0.9738
+
+
+
+
+--------------- VAR ---------------
+total count: 7091
+##### TOP-1 #####
+	[only generating] acc: 0.9569877309265266
+	[ only  ranking ] acc: 0.15978000282047666
+	[     TIGER     ] acc: 0.9617825412494712
+##### TOP-3 #####
+	[only generating] acc: 0.972218304893527
+	[ only  ranking ] acc: 0.18431814976731067
+	[     TIGER     ] acc: 0.981243830207305
+##### TOP-5 #####
+	[only generating] acc: 0.9772951628825272
+	[ only  ranking ] acc: 0.19926667606825554
+	[     TIGER     ] acc: 0.9860386405302496
+
+
+
+
+--------------- ARG ---------------
+total count: 1995
+##### TOP-1 #####
+	[only generating] acc: 0.7428571428571429
+	[ only  ranking ] acc: 0.26516290726817043
+	[     TIGER     ] acc: 0.8105263157894737
+##### TOP-3 #####
+	[only generating] acc: 0.8290726817042606
+	[ only  ranking ] acc: 0.32781954887218046
+	[     TIGER     ] acc: 0.9112781954887218
+##### TOP-5 #####
+	[only generating] acc: 0.8521303258145363
+	[ only  ranking ] acc: 0.3644110275689223
+	[     TIGER     ] acc: 0.9453634085213033
+
+
+
+
+--------------- RET ---------------
+total count: 914
+##### TOP-1 #####
+	[only generating] acc: 0.8533916849015317
+	[ only  ranking ] acc: 0.20568927789934355
+	[     TIGER     ] acc: 0.8708971553610503
+##### TOP-3 #####
+	[only generating] acc: 0.8938730853391685
+	[ only  ranking ] acc: 0.2888402625820569
+	[     TIGER     ] acc: 0.9223194748358862
+##### TOP-5 #####
+	[only generating] acc: 0.9026258205689278
+	[ only  ranking ] acc: 0.33150984682713347
+	[     TIGER     ] acc: 0.9409190371991247
+
+
+
+
+--------------- ELE ---------------
+total count: 5199
+##### TOP-1 #####
+	[only generating] acc: 0.955376033852664
+	[ only  ranking ] acc: 0.0030775149067128293
+	[     TIGER     ] acc: 0.9621080977110983
+##### TOP-3 #####
+	[only generating] acc: 0.9753798807462973
+	[ only  ranking ] acc: 0.007309097903442969
+	[     TIGER     ] acc: 0.9788420850163493
+##### TOP-5 #####
+	[only generating] acc: 0.979803808424697
+	[ only  ranking ] acc: 0.012117714945181766
+	[     TIGER     ] acc: 0.9796114637430275
+
+
+
+
+--------------- GEN ---------------
+total count: 2748
+##### TOP-1 #####
+	[only generating] acc: 0.9334061135371179
+	[ only  ranking ] acc: 0.036390101892285295
+	[     TIGER     ] acc: 0.9323144104803494
+##### TOP-3 #####
+	[only generating] acc: 0.9694323144104804
+	[ only  ranking ] acc: 0.08915574963609899
+	[     TIGER     ] acc: 0.9679767103347889
+##### TOP-5 #####
+	[only generating] acc: 0.9781659388646288
+	[ only  ranking ] acc: 0.1401018922852984
+	[     TIGER     ] acc: 0.9785298398835517
+
+
+
+
+--------------- USR ---------------
+total count: 2053
+##### TOP-1 #####
+	[only generating] acc: 0.7384315635655139
+	[ only  ranking ] acc: 0.8446176327325865
+	[     TIGER     ] acc: 0.8129566488066244
+##### TOP-3 #####
+	[only generating] acc: 0.7939600584510472
+	[ only  ranking ] acc: 0.9459327812956648
+	[     TIGER     ] acc: 0.910862152946907
+##### TOP-5 #####
+	[only generating] acc: 0.8149050170482222
+	[ only  ranking ] acc: 0.971748660496834
+	[     TIGER     ] acc: 0.9527520701412567
+
+
+
+
+--------------- SEEN ---------------
+total count: 9421
+##### TOP-1 #####
+	[only generating] acc: 0.9216643668400382
+	[ only  ranking ] acc: 0.1483918904574886
+	[     TIGER     ] acc: 0.9367370767434455
+##### TOP-3 #####
+	[only generating] acc: 0.9523405158688037
+	[ only  ranking ] acc: 0.18108481052966777
+	[     TIGER     ] acc: 0.9703853094151363
+##### TOP-5 #####
+	[only generating] acc: 0.9608321834200191
+	[ only  ranking ] acc: 0.20178325018575521
+	[     TIGER     ] acc: 0.9793015603439126
+
+
+
+
+--------------- UNSEEN ---------------
+total count: 579
+##### TOP-1 #####
+	[only generating] acc: 0.6303972366148531
+	[ only  ranking ] acc: 0.7806563039723662
+	[     TIGER     ] acc: 0.7046632124352331
+##### TOP-3 #####
+	[only generating] acc: 0.6787564766839378
+	[ only  ranking ] acc: 0.8963730569948186
+	[     TIGER     ] acc: 0.8238341968911918
+##### TOP-5 #####
+	[only generating] acc: 0.696027633851468
+	[ only  ranking ] acc: 0.9360967184801382
+	[     TIGER     ] acc: 0.8842832469775475
+
+
+
